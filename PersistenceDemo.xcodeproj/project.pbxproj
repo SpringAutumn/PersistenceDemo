@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F84F99670F94F5090D94D48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB1B418B0E50487CAE762779 /* libPods.a */; };
+		714B59121934CE2B00CA09FB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 714B59111934CE2B00CA09FB /* CoreData.framework */; };
+		714B59151934D13100CA09FB /* CodeMonkeyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 714B59131934D13100CA09FB /* CodeMonkeyModel.xcdatamodeld */; };
+		714B59181934D33500CA09FB /* Programmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 714B59171934D33500CA09FB /* Programmer.m */; };
 		D000B60C19347B1400A8356E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D000B5F819347B1400A8356E /* AppDelegate.m */; };
 		D000B60D19347B1400A8356E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D000B5F919347B1400A8356E /* main.m */; };
 		D000B60E19347B1400A8356E /* PersistenceDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D000B5FA19347B1400A8356E /* PersistenceDemo-Info.plist */; };
@@ -45,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		3761224BE12941C1BC9FA370 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		714B59111934CE2B00CA09FB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		714B59141934D13100CA09FB /* CodeMonkeyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodeMonkeyModel.xcdatamodel; sourceTree = "<group>"; };
+		714B59161934D33500CA09FB /* Programmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Programmer.h; sourceTree = "<group>"; };
+		714B59171934D33500CA09FB /* Programmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Programmer.m; sourceTree = "<group>"; };
 		D000B5F719347B1400A8356E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D000B5F819347B1400A8356E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D000B5F919347B1400A8356E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714B59121934CE2B00CA09FB /* CoreData.framework in Frameworks */,
 				D00A1E4C193468EC00655847 /* CoreGraphics.framework in Frameworks */,
 				D00A1E4E193468EC00655847 /* UIKit.framework in Frameworks */,
 				D00A1E4A193468EC00655847 /* Foundation.framework in Frameworks */,
@@ -144,6 +152,8 @@
 				D000B60119347B1400A8356E /* CodeMonkey.h */,
 				D000B60219347B1400A8356E /* CodeMonkey.m */,
 				D000B60319347B1400A8356E /* CodeMonkeyStoreProtocol.h */,
+				714B59161934D33500CA09FB /* Programmer.h */,
+				714B59171934D33500CA09FB /* Programmer.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -153,6 +163,7 @@
 			children = (
 				D000B60519347B1400A8356E /* InfoPlist.strings */,
 				D000B60719347B1400A8356E /* Images.xcassets */,
+				714B59131934D13100CA09FB /* CodeMonkeyModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -212,6 +223,7 @@
 		D00A1E48193468EC00655847 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				714B59111934CE2B00CA09FB /* CoreData.framework */,
 				D00A1E49193468EC00655847 /* Foundation.framework */,
 				D00A1E4B193468EC00655847 /* CoreGraphics.framework */,
 				D00A1E4D193468EC00655847 /* UIKit.framework */,
@@ -375,6 +387,8 @@
 			files = (
 				D0D3858619347DF800EB7CE4 /* ObjectArchiveStore.m in Sources */,
 				D0D3858019347DCA00EB7CE4 /* PropertyListStore.m in Sources */,
+				714B59151934D13100CA09FB /* CodeMonkeyModel.xcdatamodeld in Sources */,
+				714B59181934D33500CA09FB /* Programmer.m in Sources */,
 				D0D3858F19347F5200EB7CE4 /* Utility.m in Sources */,
 				D000B60F19347B1400A8356E /* ViewController.m in Sources */,
 				D000B61019347B1400A8356E /* CodeMonkey.m in Sources */,
@@ -599,6 +613,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		714B59131934D13100CA09FB /* CodeMonkeyModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				714B59141934D13100CA09FB /* CodeMonkeyModel.xcdatamodel */,
+			);
+			currentVersion = 714B59141934D13100CA09FB /* CodeMonkeyModel.xcdatamodel */;
+			path = CodeMonkeyModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D00A1E3E193468EC00655847 /* Project object */;
 }

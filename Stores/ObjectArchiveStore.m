@@ -10,6 +10,10 @@
 #import "CodeMonkey.h"
 #import "Utility.h"
 
+
+#define kArchiveFileName    @"archive_data.archive"
+#define kArchiveKey         @"kArchiveCodeMonkey"
+
 @implementation ObjectArchiveStore
 
 + (ObjectArchiveStore *)sharedStore {
@@ -24,11 +28,30 @@
 }
 
 - (CodeMonkey*)load {
-    return nil;
+    NSString *filePath = [[Utility documentsDir] stringByAppendingPathComponent:kArchiveFileName];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:filePath];
+    NSKeyedUnarchiver *cmUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+
+    CodeMonkey *cm = [cmUnarchiver decodeObjectForKey:kArchiveKey];
+    [cmUnarchiver finishDecoding];
+    return cm;
 }
 
 - (void)save:(CodeMonkey *)cm {
-  
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *cmArchiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [cmArchiver encodeObject:cm forKey:kArchiveKey];
+    [cmArchiver finishEncoding];
+
+    NSString *filePath = [[Utility documentsDir] stringByAppendingPathComponent:kArchiveFileName];
+    NSError *error;
+    BOOL writeStatus = [data writeToFile: filePath
+                                 options: NSDataWritingAtomic
+                                   error: &error];
+    if (!writeStatus) {
+        NSLog (@"error writing to file: %@", error);
+        return;
+    }
 }
 
 @end
